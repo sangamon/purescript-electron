@@ -4,13 +4,9 @@
 
 const BrowserWindow = require('electron').BrowserWindow;
 
-function browserWindowOptionsFrom(options) {
-  return {}; // TODO
-}
-
 exports.newBrowserWindow = function(options) {
   return function() {
-    return new BrowserWindow(browserWindowOptionsFrom(options));
+    return new BrowserWindow(options);
   };
 }
 

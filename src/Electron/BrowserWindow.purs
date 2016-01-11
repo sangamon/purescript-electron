@@ -1,6 +1,5 @@
 module Electron.BrowserWindow
-  ( BrowserWindowOption(..)
-  , BrowserWindowOptions(..)
+  ( BrowserWindowOptions(..)
   , BrowserWindow()
   , newBrowserWindow
   , onClose
@@ -14,11 +13,11 @@ import Control.Monad.Eff.Unsafe
 
 import Electron.Eff
 
-data BrowserWindowOption
-  = Width Int
-  | Height Int
-
-type BrowserWindowOptions = Array BrowserWindowOption
+type BrowserWindowOptions =
+  { width :: Int
+  , height :: Int
+  , show :: Boolean
+  }
 
 foreign import data BrowserWindow :: *
 
